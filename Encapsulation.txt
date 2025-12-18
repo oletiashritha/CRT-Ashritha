@@ -1,0 +1,40 @@
+class Student{
+private String rollNo;
+private String name;
+private String email;
+private int age;
+public void setData(String x,String y,String z,int a){
+rollNo='x';
+name='y';
+email='z';
+age='a';
+}
+public String getRollNo()
+{
+return rollNo;
+}
+public String getName()
+{
+return name;
+}
+public Sring getEmail()
+{
+return email;
+}
+public int getAge()
+{
+return age;
+}
+}
+public class ExampleForEncapsulaion{
+public static void main(String args[]){
+Student s1=new Student();
+Student s2=new Student();
+s1.setData("A101","Ashritha","ashritha@gmail.com",20);
+s2.setData("A102","Bhargavi","bhargavi@gmail.com",21);(
+System.out.println("The student roll number: "+s1.getRollNo());
+System.out.println("The name of the student: "+s1.getName());
+System.out.println("The email of the student: "+s2.getEmail());
+System.out.println("The age of the student: "+s2.getAge());
+}
+}
