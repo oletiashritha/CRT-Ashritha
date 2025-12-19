@@ -1,0 +1,76 @@
+package day4;
+
+import java.util.Scanner;
+
+class InvalidException extends Exception{
+	public String getMessage()
+	{
+		return "Invalid password  Try again" ;
+	}
+	
+}
+class Mail
+{
+	String login="akhila";
+	int password=2911;
+	int PWD;
+	String LN;
+      void Input()
+      {
+    	  Scanner s=new Scanner(System.in);
+    	  System.out.println("enter the account number:");
+    	  LN=s.next();
+    	  System.out.println("enter the password:");
+    	  PWD=s.nextInt();
+    	  
+      }
+      void verify() throws  InvalidException{
+    	  if(login==LN &&password==PWD)
+    	  {
+    		  System.out.println("login successfully");
+    	  }
+    	  else
+    	  {
+    		  InvalidException i=new InvalidException();
+    		  System.out.println(i.getMessage());
+    		  throw i;
+    	  }
+      }
+}
+class valid
+{
+	void initiate()
+	{
+		Mail mail=new Mail();
+		try {
+		mail.Input();
+		mail.verify();
+		}
+		catch(Exception e) {
+			try {
+	
+				mail.Input();
+				mail.verify();
+				}
+				catch(Exception a) {
+					try {
+						mail.Input();
+						mail.verify();
+						}
+						catch(Exception c) {
+							System.out.println("try another to enter in mail");
+						}
+				}
+		}
+	}
+}
+
+public class Eample3Custom{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         valid v=new valid();
+         v.initiate();
+	}
+
+}
