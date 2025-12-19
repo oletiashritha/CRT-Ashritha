@@ -1,0 +1,85 @@
+package day5;
+
+/*
+ * Deadlock:
+ * Deadlock in java is a situation where two  or more thraeds are blocked function waiting for eachother
+ * 
+ * a java multithreading program any suffer from the deadlock condition br the Synchronization keyword causes the executing thread to 
+ * block while wait()for lock
+ * 
+*/
+
+class Family implements Runnable 
+{
+	String resource1="SRI";
+	String resource2="PlayStation";
+	public void run()
+	{
+		String name=Thread.currentThread().getName();
+		if(name.equals("SRI")==true)
+		{
+			crAccquiredResource();
+		}
+		else
+		{
+			akhilaAccquiredResource();
+		}
+	}
+	void crAccquiredResource()
+	{
+		synchronized (resource2)
+		{
+			try
+			{
+				System.out.println("SRI accquired the player");
+				Thread.sleep(1000);
+				synchronized(resource1) 
+				{
+					System.out.println("SRI accquired TV" );
+					Thread.sleep(1000);
+				}
+			}
+			catch(Exception e)
+			{
+				System.out.println("robit failed");
+				
+			}
+		}
+		}
+	void akhilaAccquiredResource()
+	{
+		synchronized (resource1)
+		{
+			try
+			{
+				System.out.println("akhila accquired TV");
+				Thread.sleep(1000);
+				synchronized(resource2) 
+				{
+					System.out.println("akhila accquired the player" );
+					Thread.sleep(1000);
+				}
+			}
+			catch(Exception e)
+			{
+				System.out.println("robit failed");
+				
+			}
+		}
+		}
+}
+public class ExampleforDeadlock {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Family f=new Family();
+		Thread t1=new Thread(f);
+		Thread t2=new Thread(f);
+		t1.setName("SRI");
+		t2.setName("moksha");
+		t1.start();
+		t2.start();
+
+	}
+
+}
