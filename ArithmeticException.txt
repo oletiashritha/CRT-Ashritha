@@ -1,0 +1,27 @@
+package day4;
+
+
+class Demo{
+	void div()  throws ArithmeticException{
+		int n1=25;
+	    int n2=0;
+	    System.out.println(n1/n2);
+
+	}
+}
+public class Example2Ecxeption {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Demo d=new Demo();
+		try {
+			d.div();
+			
+		}
+		catch(Exception e){
+			System.out.println("");
+		}
+            
+	}
+
+}
