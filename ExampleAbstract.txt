@@ -1,0 +1,80 @@
+package day3;
+
+/*
+ * it is a process of hiding the implemention details from the user,only
+ * the functionallity will be provided to user
+ */
+
+abstract class Plane{
+	abstract void takeoff();
+	abstract void fly();
+	abstract void land();
+	
+}
+class CargoPlane extends Plane {
+	void takeoff()
+	{
+		System.out.println("cargoplane is taking off");
+	}
+	void fly()
+	{
+		System.out.println("cargoplane is flying");
+	}
+	void land()
+	{
+		System.out.println("cargoplane is landing");
+	}
+}
+class PassengerPlane extends Plane
+{
+	void takeoff()
+	{
+		System.out.println("PassengerPlane is taking off");
+	}
+	void fly()
+	{
+		System.out.println("PassengerPlane is flying");
+	}
+	void land()
+	{
+		System.out.println("PassengerPlane is landing");
+	}
+}
+	
+class FigtherPlane extends Plane
+{
+	void takeoff()
+	{
+		System.out.println("FigtherPlane is taking off");
+	}
+	void fly()
+	{
+		System.out.println("FigtherPlane is flying at great height ");
+	}
+	void land()
+	{
+		System.out.println("FigtherPlaneis landing");
+	}
+}
+class Airport 
+{
+	void Planep(Plane p) {
+	p.takeoff();
+	p.fly();
+	p.land();
+	}
+}
+public class ExampleAbstract {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CargoPlane cp=new CargoPlane();
+		PassengerPlane pp=new PassengerPlane();
+		FigtherPlane fp=new FigtherPlane();
+		Airport a=new Airport();
+		a.Planep(cp);
+		a.Planep(pp);
+		a.Planep(fp);
+	}
+
+}
