@@ -1,0 +1,58 @@
+package day6;
+
+import java.util.*;
+
+class car
+{
+	private String name;
+	private String color;
+	private int cost ;
+	public car( String name,String color,int cost)
+	{
+		super();
+		this.name=name;
+		this.color=color;
+		this.cost= cost;
+	}
+     
+	 public String getName()
+     {
+    	 return name;
+     }
+     public String getColor()
+     {
+    	 return color;
+     }
+     public int getCost()
+     {
+    	 return cost;
+     }
+
+	 @Override
+	 public String toString() {
+		return "car [name=" + name + ", color=" + color + ", cost=" + cost + "]";
+	 }
+    
+     
+}
+
+public class ExampleForVector2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		car c1=new car("aaaaaaa","red",1000000);
+		car c2=new car("gggggggg","black",900000);
+		car c3=new car("hhhhhhhh","white",9999999);
+		Vector<car> ll=new Vector<car>();
+		ll.add(c1);	
+		ll.add(c2);	
+		ll.add(c3);	
+
+		for(Object i:ll)
+		{
+			System.out.println(i);
+		}
+
+	}
+
+	}
