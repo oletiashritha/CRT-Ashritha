@@ -1,0 +1,58 @@
+package AITS;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class NameComparator implements Comparator<Student1>
+{
+	@Override
+	public int compare(Student1 o1,Student1 o2) {
+		return o1.getName().compareTo(o2.getName());
+	}
+}
+class RollNumberComparator implements Comparator<Student1>
+{
+	@Override
+	public int compare(Student1 s1,Student1 s2) {
+		return s1.getRollNo().compareTo(s2.getRollNo());
+	}
+}
+class Student1
+{
+	private String name;
+	private String rollno;
+	public Student1(String name,String rollno)
+	{
+		super();
+		this.name=name;
+		this.rollno=rollno;
+	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", rollno=" + rollno + "]";
+	}
+	public String getName() {
+		return name;
+	}
+	public String getRollNo() {
+		return rollno;
+	}
+	public void setRollno(String rollno) {
+		this.rollno = rollno;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+    }
+public class ExampleForComparator{
+	public static void main(String args[]) {
+		Student1 s1=new Student1("Kamala hasan","S111");
+		Student1 s2=new Student1("Rajini Kanth","S110");
+		Student1 s3=new Student1("Shruthi hasan","S119");
+		ArrayList al=new ArrayList();
+		al.add(s1);
+		al.add(s2);
+		al.add(s3);
+		System.out.println(al);
+	}
+}
