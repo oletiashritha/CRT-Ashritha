@@ -1,0 +1,47 @@
+package day6;
+import java.util.*;
+/*
+ * implementclass---->
+ * 
+ * specification :
+ * 1.insertion order will not be maintain
+ * 2.Duplicate are not allowed
+ * 3.Not indexbased
+ * 4.Null values can be stored
+ * 
+ * HashSet:
+ * --------------
+ * pre-defined class --->java.util--->jdk1.2
+ * UnderLIne DS--->HashTable
+ * Initial capacity--->16
+ * fill ratio /load factor----->75%------>16+12
+ * 
+ */
+
+public class ExampleforSet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*Set s=new HashSet();
+		Set s1=new LinkedHashSet();
+		Set s2=new TreeSet();*/
+		HashSet hs=new HashSet();
+		hs.add(10);
+		hs.add("pushpa");
+		hs.add("veeresh");
+		System.out.println("HashSet:"+hs);
+		for(Object i:hs)
+  		{
+  			System.out.println(i);
+  		}
+  		System.out.println("-------------------------------------------------");
+  		System.out.println(hs.size());
+  		System.out.println("-------------------------------------------------");
+  		System.out.println(hs.contains(30));
+  		System.out.println("-------------------------------------------------");
+  		System.out.println(hs.clone());
+  		System.out.println("-------------------------------------------------");
+  		System.out.println(hs.isEmpty());
+	}
+
+}
