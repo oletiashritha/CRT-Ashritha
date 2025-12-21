@@ -1,0 +1,47 @@
+package day6;
+
+import java.util.*;
+class AnimalforDog
+{
+	String name,bread;
+	public AnimalforDog(String name,String bread)
+	{
+		super();
+		this.name=name;
+		this.bread=bread;
+		
+	}
+	public String getName()
+    {
+   	 return name;
+    }
+    public String getBread()
+    {
+   	 return bread;
+    }
+   
+
+@Override
+	public String toString() {
+		return "Animal [name=" + name + ", bread=" + bread + "]";
+	}
+}
+
+public class ExampleForSet2 {
+
+	public static void main(String[] args) {
+		
+		AnimalforDog d=new AnimalforDog("puppy","husky");
+		HashSet hs=new HashSet();
+		hs.add(d);
+		System.out.println(hs);
+		for(Object i:hs)
+  		{
+  			System.out.println(i);
+  		}
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
