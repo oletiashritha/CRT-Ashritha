@@ -1,0 +1,27 @@
+package AITS;
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class ExampleForArrayDeque {
+	public static void main(String args[]) {
+		ArrayDeque q=new ArrayDeque();
+		q.add(10);
+		q.add(20);
+		q.add(30);
+		q.add(3);
+		System.out.println(q);
+		System.out.println("---------------------");
+		for(Object i:q)
+		{
+			System.out.println(i);
+		}
+		System.out.println("----------------------");
+		System.out.println(q.poll());
+		for(Object i:q)
+		{
+			System.out.println(i);
+		}
+		System.out.println(q.remove(20));
+		System.out.println(q);
+	}
+}
